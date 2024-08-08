@@ -23,7 +23,7 @@ import states from '../utils/states';
 import store from '../utils/store';
 import supports from '../utils/supports';
 
-const DEFAULT_TEXT_SIZE = 16;
+const DEFAULT_TEXT_SIZE = 18;
 const TEXT_SIZES = [14, 15, 16, 17, 18, 19, 20];
 const {
   PHANPY_WEBSITE: WEBSITE,

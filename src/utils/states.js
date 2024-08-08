@@ -59,8 +59,8 @@ const states = proxy({
   // Settings
   settings: {
     autoRefresh: false,
-    shortcutsViewMode: null,
-    shortcutsColumnsMode: false,
+    shortcutsViewMode: 'multi-column',
+    shortcutsColumnsMode: true,
     boostsCarousel: true,
     contentTranslation: true,
     contentTranslationTargetLanguage: null,
@@ -80,11 +80,15 @@ export function initStates() {
   // init all account based states
   // all keys that uses store.account.get() should be initialized here
   states.notificationsLast = store.account.get('notificationsLast') || null;
-  states.shortcuts = store.account.get('shortcuts') ?? [];
+  states.shortcuts = store.account.get('shortcuts') ?? [
+    { type: 'bookmarks' },
+    { type: 'following' },
+    { type: 'notifications' },
+  ];
   states.settings.autoRefresh =
     store.account.get('settings-autoRefresh') ?? false;
   states.settings.shortcutsViewMode =
-    store.account.get('settings-shortcutsViewMode') ?? null;
+    store.account.get('settings-shortcutsViewMode') ?? 'multi-column';
   if (store.account.get('settings-shortcutsColumnsMode')) {
     states.settings.shortcutsColumnsMode = true;
   }

@@ -1,5 +1,6 @@
 import './index.css';
 import './cloak-mode.css';
+import './overrides.css';
 import './polyfills';
 
 // Polyfill needed for Firefox < 122
