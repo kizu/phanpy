@@ -30,7 +30,7 @@ import states from '../utils/states';
 import store from '../utils/store';
 import { getAPIVersions, getVapidKey } from '../utils/store-utils';
 
-const DEFAULT_TEXT_SIZE = 16;
+const DEFAULT_TEXT_SIZE = 18;
 const TEXT_SIZES = [14, 15, 16, 17, 18, 19, 20];
 const SMALLEST_TEXT_SIZE = TEXT_SIZES[0];
 const LARGEST_TEXT_SIZE = TEXT_SIZES[TEXT_SIZES.length - 1];

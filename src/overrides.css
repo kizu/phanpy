@@ -1,0 +1,138 @@
+@property --captured-length {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: true;
+}
+
+/* TODO: introduce layers. */
+html:not(#a#b) {
+  body {
+    --main-width: 44em;
+  }
+
+  .deck>header {
+    --margin-top: 0;
+    margin-inline: 1px;
+
+    &>.header-grid {
+      min-height: 2lh;
+      font-size: .75em;
+      backdrop-filter: none;
+      background-color: var(--bg-color);
+      border-radius: 0;
+    }
+  }
+
+  #following-page {
+    flex-grow: 20;
+    /* max-width: max-content; */
+    --text-size: 1.25em;
+
+
+    & .deck>header {
+      position: static;
+      margin-inline: auto;
+    }
+
+    & .status {
+      line-height: 1.5;
+    }
+  }
+
+  .deck-backdrop {
+    --text-size: 1.25em;
+  }
+
+  .updates-button {
+    margin-top: 0;
+    transform: none !important;
+    left: auto !important;
+    right: 0.75em !important;
+    top: 0;
+    opacity: 1 !important;
+    scale: 0.75;
+
+    &:not(:hover) {
+      box-shadow: none;
+      opacity: 0.5 !important;
+    }
+  }
+
+  #compose-container-outer,
+  #compose-container {
+    display: flex;
+    height: 100%;
+  }
+
+  #compose-container {
+    flex-direction: column;
+
+    &>.status-preview {
+      max-height: max-content;
+    }
+
+    &>form {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+
+      &>text-expander {
+        flex-grow: 1;
+
+        &>textarea {
+          height: 100% !important;
+        }
+      }
+    }
+  }
+
+  #columns>* {
+    padding: 0;
+    border: none;
+    /* resize: horizontal; */
+  }
+
+  .timeline:not(.flat)>li {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .deck-container#following-page {
+    container-type: inline-size;
+
+    &>.deck {
+      width: 100%;
+
+      &>* {
+        container-type: inline-size;
+        --captured-length: 100cqw;
+        --column-width: var(--captured-length);
+        width: var(--main-width);
+        max-width: 100%;
+
+        &>* {
+          --captured-length: 100cqw;
+          --breakout: calc(0.5 * (var(--column-width) - var(--captured-length)));
+        }
+      }
+    }
+
+    .timeline-item-carousel[class] {
+      margin-inline: calc(-1 * var(--breakout));
+      max-width: none;
+      --text-size: 1em;
+
+      & .status {
+        line-height: 1.4;
+      }
+    }
+
+    .status-carousel h3 {
+      margin-inline: var(--breakout);
+    }
+
+    .status-carousel>ul {
+      padding-inline: var(--breakout);
+    }
+  }
+}

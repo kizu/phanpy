@@ -1,6 +1,7 @@
 import './index.css';
 import './cloak-mode.css';
 
+import './overrides.css';
 import './polyfills';
 
 import { i18n } from '@lingui/core';
