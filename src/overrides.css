@@ -11,6 +11,8 @@ html:not(#a#b) {
   }
 
   .deck>header {
+    pointer-events: unset;
+    user-select: unset;
     --margin-top: 0;
     margin-inline: 1px;
 
