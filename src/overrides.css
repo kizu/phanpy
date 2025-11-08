@@ -25,6 +25,10 @@ html:not(#a#b) {
     }
   }
 
+  #columns > * {
+    flex-grow: 0;
+  }
+
   #following-page {
     flex-grow: 20;
     /* max-width: max-content; */
@@ -58,6 +62,42 @@ html:not(#a#b) {
       box-shadow: none;
       opacity: 0.5 !important;
     }
+  }
+
+  @media (min-width: 1200px) {
+    #modal-container > div:has(> .sheet) {
+      inset-inline: 360px;
+      width: auto;
+    }
+
+    #columns:has(~ .deck-container) {
+      position: unset;
+      opacity: unset;
+      pointer-events: unset;
+      -webkit-user-select: unset;
+      -moz-user-select: unset;
+      user-select: unset;
+    }
+
+    #account-statuses-page {
+      inset-inline: 360px;
+      width: auto;
+    }
+
+    #compose-button {
+      inset-inline: max(16px,env(safe-area-inset-right)) auto;
+    }
+
+    .solid:has(> #compose-container-outer) {
+      inset-inline-end: auto;
+      width: 359px;
+      min-width: 359px;
+      padding-right: 1px;
+      overflow: hidden;
+      resize: horizontal;
+      transition: none;
+    }
+
   }
 
   #compose-container-outer,
@@ -133,8 +173,9 @@ html:not(#a#b) {
       margin-inline: var(--breakout);
     }
 
-    .status-carousel>ul {
+    .status-carousel > ul {
       padding-inline: var(--breakout);
+      oversoverscroll-behavior-x: contain;
     }
   }
 }

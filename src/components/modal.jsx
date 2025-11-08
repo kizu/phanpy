@@ -60,20 +60,20 @@ function Modal({ children, onClose, onClick, class: className, minimized }) {
         page.focus();
       }
     } else {
-      if (children) {
-        $deckContainers.forEach(($deckContainer) => {
-          $deckContainer.setAttribute('inert', '');
-        });
-      } else {
-        $deckContainers.forEach(($deckContainer) => {
-          $deckContainer.removeAttribute('inert');
-        });
-      }
+      // if (children) {
+      //   $deckContainers.forEach(($deckContainer) => {
+      //     $deckContainer.setAttribute('inert', '');
+      //   });
+      // } else {
+      //   $deckContainers.forEach(($deckContainer) => {
+      //     $deckContainer.removeAttribute('inert');
+      //   });
+      // }
     }
     return () => {
-      $deckContainers.forEach(($deckContainer) => {
-        $deckContainer.removeAttribute('inert');
-      });
+      // $deckContainers.forEach(($deckContainer) => {
+      //   $deckContainer.removeAttribute('inert');
+      // });
     };
   }, [children, minimized]);
 
