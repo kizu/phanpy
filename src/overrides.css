@@ -79,7 +79,7 @@ html:not(#a#b) {
       user-select: unset;
     }
 
-    #account-statuses-page {
+    #columns + .deck-container {
       inset-inline: 360px;
       width: auto;
     }
@@ -139,6 +139,17 @@ html:not(#a#b) {
     border-radius: 0;
   }
 
+  @media (min-width: 40em) {
+    li.timeline-item-carousel {
+      max-width: calc(100vw - 369px * 2);
+
+      & .status-carousel > * {
+        overscroll-behavior-x: contain;
+        padding-inline: calc((100vw - 369px * 2 - var(--main-width)) / 2);
+      }
+    }
+  }
+
   .deck-container#following-page {
     container-type: inline-size;
 
@@ -175,7 +186,7 @@ html:not(#a#b) {
 
     .status-carousel > ul {
       padding-inline: var(--breakout);
-      oversoverscroll-behavior-x: contain;
+      overscroll-behavior-x: contain;
     }
   }
 }
